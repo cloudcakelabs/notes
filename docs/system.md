@@ -129,10 +129,14 @@ ps -ef --sort=-start_time
 ps -eo pid,lstart,cmd
 ```
 
-#### With regex
+#### `ps` using grep and displaying headers
 
 ```sh
-ps -eo user,pid,ppid,lstart,%mem,%cpu,cmd --sort=start_time | grep '\.py[[:blank:]]' | grep -v grep
+ps -eo user,pid,ppid,lstart,%mem,%cpu,cmd --sort=start_time | { head -1; grep '\.py[[:blank:]]'; } | grep -v grep
+```
+
+```sh
+ps -eo user,pid,ppid,lstart,%mem,%cpu,cmd --sort=start_time | sed -n '1p; /[.]py[[:blank:]]/p'
 ```
 
 #### List file descriptors
