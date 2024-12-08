@@ -1,12 +1,12 @@
 site_name: Notes
-# site_url: https://cloudcakelabs.github.io/notes/
+site_url: https://cloudcakelabs.github.io/notes/
 site_dir: public
 repo_name: cloudcakelabs/notes
 repo_url: https://github.com/cloudcakelabs/notes/
 edit_uri: edit/main/docs/
 
 nav:
-    - Home: index.md
+    # - Home: index.md
     - System: system.md
     - k8s: k8s.md
 

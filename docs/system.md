@@ -45,7 +45,7 @@ find /etc/ssh -type f -exec cp {} {}.bak \;
 
 `--relative` flag creates subdirectories in the target directory
 
-```
+```sh
 find /path/dir/ -type f -name <name> -exec rsync -av --relative {} /path/dir/ \;
 ```
 
