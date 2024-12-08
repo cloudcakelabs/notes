@@ -139,6 +139,10 @@ ps -eo user,pid,ppid,lstart,%mem,%cpu,cmd --sort=start_time | { head -1; grep '\
 ps -eo user,pid,ppid,lstart,%mem,%cpu,cmd --sort=start_time | sed -n '1p; /[.]py[[:blank:]]/p'
 ```
 
+```sh
+ps -eo user,pid,ppid,lstart,%mem,%cpu,cmd --sort=start_time | awk 'NR == 1 || /[.]py[[:blank:]]/'
+```
+
 #### List file descriptors
 
 ```sh
