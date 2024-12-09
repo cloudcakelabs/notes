@@ -691,7 +691,7 @@ set colored-stats on
 
 ```sh
 [credential]
-  helper = store
+  helper = store --file /path/to/.gitcred
 [user]
   name = <name>
   email = <email>
@@ -709,7 +709,10 @@ set colored-stats on
 [alias]
   graph = log --oneline --graph --decorate
   llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+  acp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
 ```
+
+Multiple configs
 
 ```sh
 [includeIf "gitdir:~/personal/"]
