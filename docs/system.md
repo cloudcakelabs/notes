@@ -7,32 +7,32 @@
 #### Find large files
 
 ```sh
-find /path/dir -type f -exec du -h {} + | sort -hr | head -20
+find /path/to/dir -type f -exec du -h {} + | sort -hr | head -20
 ```
 
 ```sh
-find /path/dir -type f -printf "%s\t%p\n" | sort -rh | head -20
+find /path/to/dir -type f -printf "%s\t%p\n" | sort -rh | head -20
 ```
 
 ```sh
-find /path/dir -type f -exec ls -s {} + | sort -n -r | head -20
+find /path/to/dir -type f -exec ls -s {} + | sort -n -r | head -20
 ```
 
 ```sh
 # Do not cross filesystems
-find /path/dir -xdev -type f -exec ls -s {} + | sort -n -r | head -20
+find /path/to/dir -xdev -type f -exec ls -s {} + | sort -n -r | head -20
 ```
 
 #### Display files older than 60 days
 
 ```sh
-find /path/dir -type f -mtime +60 -exec ls -s {} \;
+find /path/to/dir -type f -mtime +60 -exec ls -s {} \;
 ```
 
 #### Delete files older than 60 days
 
 ```sh
-find /path/dir -type f -mtime +60 -exec rm -f {} \;
+find /path/to/dir -type f -mtime +60 -exec rm -f {} \;
 ```
 
 #### Find and exec a command
@@ -40,13 +40,13 @@ find /path/dir -type f -mtime +60 -exec rm -f {} \;
 ```sh
 find [path] [args] -exec [command] {} \;
 # example
-find /etc/ssh -type f -exec cp {} {}.bak \;
+find /path/to/dir -type f -exec cp {} {}.bak \;
 ```
 
 `--relative` flag creates subdirectories in the target directory
 
 ```sh
-find /path/dir/ -type f -name <name> -exec rsync -av --relative {} /path/dir/ \;
+find /path/to/dir/ -type f -name <name> -exec rsync -av --relative {} /path/to/dir/ \;
 ```
 
 #### Sort by size
@@ -95,7 +95,7 @@ ldd <program>
 #### Display permissions and user/group with `tree`
 
 ```sh
-tree -pugfiaD /path/dir
+tree -pugfiaD /path/to/dir
 ```
 
 ### Memory, CPU and process management
@@ -786,7 +786,7 @@ dnf list <package_name> --showduplicates
 #### Downgrade a package
 
 ```sh
-dnf downgrade <package name>-<version>
+dnf downgrade <package_name>-<version>
 ```
 
 #### `versionlock`: Protect packages from being updated
@@ -796,7 +796,7 @@ dnf install python3-dnf-plugin-versionlock -y
 ```
 
 ```sh
-dnf versionlock <package name>-<version>
+dnf versionlock <package_name>-<version>
 ```
 
 ```sh

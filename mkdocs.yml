@@ -6,9 +6,10 @@ repo_url: https://github.com/cloudcakelabs/notes/
 edit_uri: edit/main/docs/
 
 nav:
-    # - Home: index.md
+    - Home: index.md
     - System: system.md
     - k8s: k8s.md
+    - Automation: automation.md
 
 theme:
   name: material
