@@ -20,11 +20,11 @@ venv-salt-call state.apply <sls> test=true --state_output=changes
 
 ### Master
 
+Delete specified minion key[(doc)](https://docs.saltproject.io/en/latest/ref/cli/salt-key.html)
+
 !!! warning "Warning"
 
     Delete key, only if needed!
-
-Delete specified minion key[(doc)](https://docs.saltproject.io/en/latest/ref/cli/salt-key.html)
 
 ```sh
 salt-key -d <minion_id>
