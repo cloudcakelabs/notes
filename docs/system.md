@@ -330,6 +330,12 @@ git commit -m <commit_message>
 git commit --amend
 ```
 
+#### Revert to a previous commit
+
+```sh
+git reset <commit_id> --hard
+```
+
 ### Vim
 
 #### Find and replace
