@@ -846,12 +846,40 @@ dnf -y remove --oldinstallonly --setopt installonly_limit=2 kernel
 
 #### Disable/Enable Repo
 
+Show all repos
+
+```sh
+dnf repolist --all
+```
+
+Disable a repo
+
 ```sh
 dnf config-manager --disable <repo_name>
 ```
 
+Show disabled repos
+
+```sh
+dnf repolist --disabled
+```
+
+Enable a repo
+
 ```sh
 dnf config-manager --enable <repo_name>
+```
+
+Show enabled repos
+
+```sh
+dnf repolist --enabled
+```
+
+or
+
+```sh
+dnf repolist
 ```
 
 ### Security and bugfixes updates
