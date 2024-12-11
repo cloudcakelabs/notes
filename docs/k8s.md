@@ -18,7 +18,6 @@ source ~/.bash_kube_ps1
 PS1='[\u@\h \W $(kube_ps1)]\$ '
 ```
 
-
 ### Cluster and context
 
 #### Display addresses of the control plane and services

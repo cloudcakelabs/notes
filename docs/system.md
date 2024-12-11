@@ -253,6 +253,16 @@ ssh-add ~/.ssh/id_ed25519
 ssh -o StrictHostKeyChecking=no username@remotehost
 ```
 
+#### Logs
+
+```sh
+tail -f -n 100 /var/log/secure | grep sshd
+```
+
+```sh
+grep sshd /var/log/secure
+```
+
 ### SSL
 
 #### Check a certificate
@@ -832,6 +842,16 @@ yum clean all
 
 ```sh
 dnf -y remove --oldinstallonly --setopt installonly_limit=2 kernel
+```
+
+#### Disable/Enable Repo
+
+```sh
+dnf config-manager --disable <repo_name>
+```
+
+```sh
+dnf config-manager --enable <repo_name>
 ```
 
 ### Security and bugfixes updates
