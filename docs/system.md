@@ -502,6 +502,24 @@ Restart NetworkManager
 systemctl restart NetworkManager
 ```
 
+#### Network configuration with network scripts[(doc)](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/ch-network_interfaces#ch-Network_Interfaces)
+
+```sh
+vim /etc/sysconfig/network-scripts/ifcfg-<if_name>
+```
+
+Example
+
+```sh
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
+```
+
+Routing and host information for all network interface: `/etc/sysconfig/network`
+
+```sh
+vim /etc/sysconfig/network
+```
+
 #### Network connections and statistics
 
 Monitoring all listening TCP connections
