@@ -223,6 +223,20 @@ swapon -a
 dig +noall +answer +multiline <fqdn>
 ```
 
+### Managing Users
+
+Add user
+
+```sh
+useradd -d <home_dir> -s <shell> <username> -G <group1> <group2>
+```
+
+Change password
+
+```sh
+passwd <username>
+```
+
 ### SSH
 
 #### Generate SSH key pair
