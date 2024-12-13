@@ -138,6 +138,16 @@ k get pod <pod name> -o wide
 k describe pod <pod name>
 ```
 
+Sort pods list using specified field. The field can be either 'cpu' or 'memory'
+
+```sh
+ k top pod --sort-by=memory
+```
+
+```sh
+ k top pod --sort-by=cpu
+```
+
 #### Get IP addr from Pod definition
 
 ```sh
