@@ -76,7 +76,7 @@ k get all -A
 
 ### Nodes
 
-### Listing nodes
+#### Listing nodes
 
 ```sh
 k get nodes
@@ -110,6 +110,26 @@ k get namespace <namespace>
 
 ```sh
 k describe namespace <namespace>
+```
+
+### Deployments
+
+- List deployments
+
+```sh
+k get deployment
+```
+
+- Get details about a deployment
+
+```sh
+k describe deployment <deployment_name>
+```
+
+- Scale up/down a deployment
+
+```sh
+k scale --replicas=<number> deployment/<deployment_name>
 ```
 
 ### Pods
