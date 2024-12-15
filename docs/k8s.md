@@ -291,6 +291,34 @@ docker run -d --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/
 - [Requirements](https://docs.k3s.io/installation/requirements)
 - [Known Issues](https://docs.k3s.io/known-issues)
 
+## Kind
+
+### Quick Start([doc](https://kind.sigs.k8s.io/docs/user/quick-start/))
+
+- Install `kubectl`[(doc)](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- Install `go`[(doc)](https://go.dev/doc/install)
+- Install `kind`
+
+```sh
+go install sigs.k8s.io/kind@v0.25.0 
+```
+
+- Create a cluster
+
+```sh
+kind create cluster --config <config_file> --name <cluster_name>
+```
+
+- Delete a cluster
+
+```sh
+kind delete cluster --name <cluster_name>
+```
+
+### Known Issues
+
+- Pod errors due to "too many open files"[(doc)](https://kind.sigs.k8s.io/docs/user/known-issues/#pod-errors-due-to-too-many-open-files)
+
 ## Documentaion
 
 - [Cluster Architecture](https://kubernetes.io/docs/concepts/architecture/)
