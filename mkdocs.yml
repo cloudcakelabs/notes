@@ -108,4 +108,5 @@ markdown_extensions:
   - pymdownx.blocks.details
   - pymdownx.tasklist:
       custom_checkbox: true
+      clickable_checkbox: true
   - pymdownx.tilde
