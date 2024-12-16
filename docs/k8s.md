@@ -228,15 +228,16 @@ k exec --stdin --tty <pod name> -- /bin/sh
 k get rs
 ```
 
-```sh
-k describe rs/<rs name>
-```
-
 - Filter: `DESIRED` != 0
 
 ```sh
 k get rs | awk '{if ($2 != 0) print $0}'
 ```
+
+```sh
+k describe rs/<rs name>
+```
+
 
 ## Maintenance
 
