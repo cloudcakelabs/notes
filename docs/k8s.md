@@ -232,6 +232,12 @@ k get rs
 k describe rs/<rs name>
 ```
 
+- Filter: `DESIRED` != 0
+
+```sh
+k get rs | awk '{if ($2 != 0) print $0}'
+```
+
 ## Maintenance
 
 ### Cordon the node(marked as unschedulable)
