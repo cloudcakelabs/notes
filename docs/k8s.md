@@ -132,6 +132,28 @@ k describe deployment <deployment_name>
 k scale --replicas=<number> deployment/<deployment_name>
 ```
 
+### Daemonsets
+
+- List daemonsets
+
+```sh
+k get daemonset
+```
+
+- Display detailed state of daemonset
+
+```sh
+k describe ds <daemonset_name>
+```
+
+### StatefulSet
+
+- List StatefulSet
+
+```sh
+k get statefulset
+```
+
 ### Pods
 
 #### List pods
@@ -238,7 +260,6 @@ k get rs | awk '{if ($2 != 0) print $0}'
 k describe rs/<rs name>
 ```
 
-
 ## Maintenance
 
 ### Cordon the node(marked as unschedulable)
@@ -298,7 +319,7 @@ systemctl status rke2-agent
 #### Uninstall
 
 ```sh
-/usr/local/bin/rancher-system-agent-uninstall.sh 
+/usr/local/bin/rancher-system-agent-uninstall.sh
 ```
 
 ### containerd
