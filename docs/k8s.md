@@ -154,6 +154,12 @@ k describe ds <daemonset_name>
 k get statefulset
 ```
 
+- Scale Up/Down
+
+```sh
+k scale --replicas=<number> sts <sts_name>
+```
+
 ### Pods
 
 #### List pods
@@ -258,6 +264,18 @@ k get rs | awk '{if ($2 != 0) print $0}'
 
 ```sh
 k describe rs/<rs name>
+```
+
+#### Delete Pod
+
+```sh
+k delete pod <pod_name>
+```
+
+#### Force Pod deletion
+
+```sh
+k delete pod --grace-period=0 --force <pod_name>
 ```
 
 ## Maintenance
