@@ -267,6 +267,12 @@ ssh-add ~/.ssh/id_ed25519
 ssh -o StrictHostKeyChecking=no username@remotehost
 ```
 
+#### Get SSH version
+
+```sh
+echo ~ | nc localhost 22
+```
+
 #### Logs
 
 ```sh
@@ -812,6 +818,20 @@ timedatectl status
 
 ```sh
 timedatectl set-timezone UTC
+```
+
+### RabbitMQ
+
+- List queues
+
+```sh
+rabbitmqctl list_queues
+```
+
+- List consumers
+
+```sh
+rabbitmqctl list_consumers
 ```
 
 ## RedHat-based Linux
