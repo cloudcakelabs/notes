@@ -859,6 +859,12 @@ rabbitmqctl list_consumers
 jq -r '[paths | join(".")]'  <json_file>
 ```
 
+  * Exemple
+
+```sh
+k get deploy <deployment_name> -o json | jq '.spec.template.spec.containers[].startupProbe'
+```
+
 ## RedHat-based Linux
 
 ### Admin
