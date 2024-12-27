@@ -851,6 +851,14 @@ rabbitmqctl list_queues
 rabbitmqctl list_consumers
 ```
 
+### Tools
+
+- Extract full paths of json keys
+
+```sh
+jq -r '[paths | join(".")]'  <json_file>
+```
+
 ## RedHat-based Linux
 
 ### Admin
