@@ -373,6 +373,16 @@ git commit --amend
 git reset <commit_id> --hard
 ```
 
+#### Discard local changes
+
+```sh
+git fetch origin
+```
+
+```sh
+git reset --hard origin/<branch_name>
+```
+
 ### Vim
 
 #### Find and replace
