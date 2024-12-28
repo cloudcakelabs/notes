@@ -869,7 +869,7 @@ rabbitmqctl list_consumers
 jq -r '[paths | join(".")]'  <json_file>
 ```
 
-  * Exemple
+Exemple
 
 ```sh
 k get deploy <deployment_name> -o json | jq -r '[paths | join(".")]'
