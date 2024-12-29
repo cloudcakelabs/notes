@@ -501,6 +501,28 @@ Show the current locale and keyboard settings
 localectl
 ```
 
+### Grub
+
+Modify `/etc/default/grub`
+
+```sh
+vim /etc/default/grub
+```
+
+Update `grub.cfg` file
+
+```sh
+grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+
+### VirtualBox
+
+Error: Please disable the KVM kernel extension, recompile your >kernel and reboot (VERR_SVM_IN_USE).
+
+Fix for VirtualBox `7.1.4` and Kernel `6.12`
+
+Modify `/etc/default/grub`: Add `kvm.enable_virt_at_load=0` parameter to `GRUB_CMDLINE_LINUX_DEFAULT`
+
 ### Networking
 
 #### NetworkManager
