@@ -517,7 +517,7 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 ### VirtualBox
 
-Error: Please disable the KVM kernel extension, recompile your >kernel and reboot (VERR_SVM_IN_USE).
+Error: Please disable the KVM kernel extension, recompile your kernel and reboot (VERR_SVM_IN_USE).
 
 Fix for VirtualBox `7.1.4` and Kernel `6.12`
 
