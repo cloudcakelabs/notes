@@ -521,7 +521,7 @@ Error: Please disable the KVM kernel extension, recompile your >kernel and reboo
 
 Fix for VirtualBox `7.1.4` and Kernel `6.12`
 
-Modify `/etc/default/grub`: Add `kvm.enable_virt_at_load=0` parameter to `GRUB_CMDLINE_LINUX_DEFAULT`
+Update `/etc/default/grub` file: Add `kvm.enable_virt_at_load=0` parameter to `GRUB_CMDLINE_LINUX_DEFAULT`
 
 ### Networking
 
