@@ -306,6 +306,21 @@ k get pods <pod_name> -o jsonpath='{.spec.containers[*].name} {.status.container
 k get pods -o custom-columns='NAME:.metadata.name,CPU_REQ:spec.containers[].resources.requests.cpu,CPU_LIM:spec.containers[].resources.limits.cpu,MEMORY_REQ:spec.containers[].resources.requests.memory,MEM_LIM:spec.containers[].resources.limits.memory'
 ```
 
+#### Get pod states
+
+Running state
+
+```sh
+k get pod <pod_name> -o json | jq '.status.containerStatuses[].state'
+```
+
+Ready state
+
+```sh
+k get pod <pod_name> -o json | jq '.status.conditions[] | select(.type=="Ready")'
+```
+
+
 ## Maintenance
 
 ### Cordon the node(marked as unschedulable)
