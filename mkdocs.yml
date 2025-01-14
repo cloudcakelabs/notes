@@ -49,6 +49,7 @@ theme:
     - navigation.top
     - navigation.tabs
     - navigation.indexes
+    - navigation.path
     - search.suggest
     - content.code.annotate
     - content.code.copy
@@ -58,7 +59,7 @@ theme:
     - content.tooltips
     - content.footnote.tooltips
     - toc.follow
-    - toc.integrate
+    # - toc.integrate
 
 # hide:
 #   - navigation
