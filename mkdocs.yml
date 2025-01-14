@@ -44,7 +44,7 @@ theme:
     logo: fontawesome/solid/paper-plane
 
   features:
-    - navigation.top
+    # - navigation.top
     - navigation.tabs
     - search.suggest
     - content.code.annotate
