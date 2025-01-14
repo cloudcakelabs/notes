@@ -46,20 +46,21 @@ theme:
   features:
     - navigation.top
     - navigation.tabs
+    - navigation.indexes
     - search.suggest
     - content.code.annotate
     - content.code.copy
     - content.code.select
     # - content.action.edit
     - content.action.view
-    - toc.follow
     - content.tooltips
-    - navigation.indexes
     - content.footnote.tooltips
+    - toc.follow
+    - toc.integrate
 
-hide:
-  - navigation
-  # - toc
+# hide:
+#   - navigation
+#   - toc
 
 # Extensions
 markdown_extensions:
