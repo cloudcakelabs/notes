@@ -272,7 +272,6 @@ Example
 
 ```sh
 k port-forward --address 0.0.0.0 pods/mongo-75f59d57f4-4nd6q 28015:27017
-k port-forward deployment/mongo 28015:27017
 ```
 
 #### ReplicaSet

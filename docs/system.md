@@ -233,6 +233,26 @@ swapoff -a
 swapon -a
 ```
 
+### Disks
+
+Input/Output(I/O) performance
+
+```sh
+dnf install sysstat
+```
+
+```sh
+iostat -d
+```
+
+```sh
+iostat -d /dev/sda
+```
+
+```sh
+iostat -p /dev/sda1
+```
+
 ### DNS queries
 
 ```sh
