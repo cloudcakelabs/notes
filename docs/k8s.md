@@ -185,11 +185,11 @@ k get pods --show-labels
 #### Get information about a Pod
 
 ```sh
-k get pod <pod name> -o wide
+k get pod <pod_name> -o wide
 ```
 
 ```sh
-k describe pod <pod name>
+k describe pod <pod_name>
 ```
 
 Sort pods list using specified field. The field can be either 'cpu' or 'memory'
@@ -205,55 +205,61 @@ Sort pods list using specified field. The field can be either 'cpu' or 'memory'
 #### Get IP addr from Pod definition
 
 ```sh
-k get pod <pod name> --output=jsonpath='{..podIP}'
+k get pod <pod_name> --output=jsonpath='{..podIP}'
 ```
 
 ```sh
-k get pod <pod name> --output=jsonpath='{..podIPs}'
+k get pod <pod_name> --output=jsonpath='{..podIPs}'
 ```
 
 #### Logs
 
 ```sh
-k logs <pod name>
+k logs <pod_name>
 ```
 
 ```sh
-k logs --since=1h <pod name>
+k logs --since=1h <pod_name>
 ```
 
 ```sh
-k logs --tail=50 <pod name>
+k logs --tail=50 <pod_name>
 ```
 
 ```sh
-k logs -f <pod name>
+k logs -f <pod_name>
 ```
 
 ```sh
-k logs <pod name> <pod name>.log
+k logs <pod_name> <pod_name>.log
 ```
 
 ```sh
-k logs --previous <pod name>
+k logs --previous <pod_name>
 ```
 
 ```sh
-k logs -c <container name> <pod name>
+k logs -c <container name> <pod_name>
 ```
 
 #### Exec command
 
 ```sh
-k exec <pod name> -- ls /
+k exec <pod_name> -- ls /
 ```
 
 ```sh
-k exec <pod name> -c <container name> -- ls /
+k exec <pod_name> -c <container name> -- ls /
 ```
 
 ```sh
-k exec --stdin --tty <pod name> -- /bin/sh 
+k exec --stdin --tty <pod_name> -- /bin/sh 
+```
+
+Get an interactive shell
+
+```sh
+k exec -it <pod_name> -- sh
 ```
 
 #### Port Forward
