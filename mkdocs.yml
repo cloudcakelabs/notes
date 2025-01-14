@@ -8,7 +8,9 @@ edit_uri: edit/main/docs/
 nav:
     - Home: index.md
     - System: system.md
-    - k8s: k8s.md
+    - Container orchestration:
+      - K8s: k8s.md
+      - Docker: docker.md
     - Automation: automation.md
 
 theme:
