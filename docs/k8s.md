@@ -242,7 +242,8 @@ k logs --previous <pod_name>
 k logs -c <container name> <pod_name>
 ```
 
-Logs for a specific label
+Logs with label selector
+(10 lines if a selector is provided)
 
 ```sh
 k logs -l app.kubernetes.io/instance=<my_label> -n <namespace> 
