@@ -345,6 +345,10 @@ k get pods -o custom-columns='NAME:.metadata.name,CPU_REQUEST:spec.containers[].
 k get pods -o custom-columns='NAME:.metadata.name,START_TIME:status.startTime,READY_TIME:.status.conditions[?(@.type=="Ready")].lastTransitionTime'
 ```
 
+```sh
+k get pods -o custom-columns='NAME:.metadata.name,START_TIME:status.startTime,READY:.status.conditions[?(@.type=="Ready")].status,READY_TIME:.status.conditions[?(@.type=="Ready")].lastTransitionTime' | (sed -u 1q; sort -k 3)
+```
+
 - Get `NAME`, `STARTED_AT` and `READY_AT` using `custom-columns`
 
 ```sh
