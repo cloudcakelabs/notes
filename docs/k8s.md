@@ -351,10 +351,10 @@ k get pods -o custom-columns='NAME:.metadata.name,START_TIME:status.startTime,RE
 k get pods -o custom-columns='NAME:.metadata.name,STARTED_AT:.status.containerStatuses[].state.running.startedAt,READY_AT:.status.conditions[?(@.type=="Ready")].lastTransitionTime'
 ```
 
-- Get `Ready` time
+- Get `Ready` time(Headers ignored and sorted by date)
 
 ```sh
-k get pods -o custom-columns='NAME:.metadata.name,READY_AT:.status.conditions[?(@.type=="Ready")].lastTransitionTime'
+k get pods -o custom-columns='POD_NAME:.metadata.name,READY_AT:.status.conditions[?(@.type=="Ready")].lastTransitionTime' | (sed -u 1q; sort -k2)
 ```
 
 Running state(using `jq`)
