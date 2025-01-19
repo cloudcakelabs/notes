@@ -351,6 +351,12 @@ k get pods -o custom-columns='NAME:.metadata.name,START_TIME:status.startTime,RE
 k get pods -o custom-columns='NAME:.metadata.name,STARTED_AT:.status.containerStatuses[].state.running.startedAt,READY_AT:.status.conditions[?(@.type=="Ready")].lastTransitionTime'
 ```
 
+- Get `Ready` time
+
+```sh
+k get pods -o custom-columns='NAME:.metadata.name,READY_AT:.status.conditions[?(@.type=="Ready")].lastTransitionTime'
+```
+
 Running state(using `jq`)
 
 ```sh
