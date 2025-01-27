@@ -138,6 +138,22 @@ k describe deployment <deployment_name>
 k scale --replicas=<number> deployment/<deployment_name>
 ```
 
+- Get deployment history
+
+```sh
+k rollout history deployment <deployment_name>
+```
+
+```sh
+k rollout history deployment <deployment_name> --revision=<revision_number>
+```
+
+- Compare two revisions
+
+```sh
+diff <(k rollout history deployment <deployment_name> --revision=<revision_number>) <(k rollout history deployment <deployment_name> --revision=<revision_number>)
+```
+
 ### Daemonsets
 
 - List daemonsets
