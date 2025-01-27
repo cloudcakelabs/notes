@@ -415,6 +415,16 @@ k get events --sort-by=.metadata.creationTimestamp --field-selector type=Warning
 watch -d 'kubectl get events --sort-by=.metadata.creationTimestamp --no-headers -A | tac'
 ```
 
+- Get recently deleted pods
+
+```sh
+k get events --field-selector reason=Killing --sort-by='.metadata.creationTimestamp'
+```
+
+```sh
+k kubectl get event -o custom-columns=NAME:.metadata.name | cut -d "." -f1
+```
+
 ## Maintenance
 
 ### Cordon the node(marked as unschedulable)
