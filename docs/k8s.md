@@ -422,7 +422,7 @@ k get events --field-selector reason=Killing --sort-by='.metadata.creationTimest
 ```
 
 ```sh
-k kubectl get event -o custom-columns=NAME:.metadata.name | cut -d "." -f1
+k get event -o custom-columns=NAME:.metadata.name | cut -d "." -f1
 ```
 
 ## Maintenance
