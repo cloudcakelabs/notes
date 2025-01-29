@@ -253,6 +253,44 @@ iostat -d /dev/sda
 iostat -p /dev/sda1
 ```
 
+#### LVM
+
+- Display file system types
+
+```sh
+lsblk -o PATH,FSTYPE,MOUNTPOINT <partition_name>
+```
+
+Example
+
+```sh
+lsblk -o PATH,FSTYPE,MOUNTPOINT /dev/sda
+```
+
+- Extend a filesystem(with `-r|--resizefs`)
+
+```sh
+lvextend -L +<size> <filesystem> -r
+```
+
+Example
+
+```sh
+lvextend -L +2G /dev/mapper/vg_root-lv_home -r
+```
+
+- Increase size of an XFS filesystem
+
+```sh
+xfs_growfs -d <filesystem>
+```
+
+Example
+
+```sh
+xfs_growfs -d /dev/mapper/vg_root-lv_home
+```
+
 ### DNS queries
 
 ```sh
