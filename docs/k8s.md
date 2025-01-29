@@ -447,6 +447,12 @@ k uncordon <node-name>
 
 ## Helm
 
+- List helm charts
+
+```sh
+helm list
+```
+
 - Update repo
 
 ```sh
