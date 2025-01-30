@@ -943,6 +943,10 @@ timedatectl set-timezone UTC
 rabbitmqctl cluster_status
 ```
 
+```sh
+rabbitmq-diagnostics check_running
+```
+
 - List queues
 
 ```sh
