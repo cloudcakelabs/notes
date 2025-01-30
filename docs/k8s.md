@@ -479,6 +479,18 @@ helm search repo -l
 helm search repo -l <chart_name>
 ```
 
+- List the dependencies for the given chart
+
+```sh
+helm dependency list
+```
+
+- Locally render templates
+
+```sh
+helm template . --output-dir <path>
+```
+
 ## Rancher, RKE2 and K3S
 
 ### crictl
