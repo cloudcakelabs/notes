@@ -1210,6 +1210,34 @@ Example
 dnf update --advisory=RHSA-2023:4102
 ```
 
+## Windows
+
+### Powershell
+
+- Test a connection
+
+```ps
+Test-NetConnection <ip_addr or fqdn> -port <port>
+```
+
+- netstat
+
+```ps
+netstat
+```
+
+- Get the basic network adapter properties
+
+```ps
+Get-NetAdapter
+```
+
+- Get routing table
+
+```sh
+Get-NetRoute
+```
+
 ## Shortcuts
 
 |          |         |
