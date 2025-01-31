@@ -1220,7 +1220,7 @@ dnf update --advisory=RHSA-2023:4102
 Test-NetConnection <ip_addr or fqdn> -port <port>
 ```
 
-- netstat
+- Network stats
 
 ```powershell
 netstat
