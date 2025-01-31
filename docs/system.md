@@ -1216,25 +1216,25 @@ dnf update --advisory=RHSA-2023:4102
 
 - Test a connection
 
-```ps
+```powershell
 Test-NetConnection <ip_addr or fqdn> -port <port>
 ```
 
 - netstat
 
-```ps
+```powershell
 netstat
 ```
 
 - Get the basic network adapter properties
 
-```ps
+```powershell
 Get-NetAdapter
 ```
 
 - Get routing table
 
-```sh
+```powershell
 Get-NetRoute
 ```
 
