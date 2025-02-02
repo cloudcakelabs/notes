@@ -32,6 +32,12 @@ k cluster-info
 k version
 ```
 
+#### Check cluster health
+
+```sh
+k get componentstatuses
+```
+
 #### Get the configuration of the cluster
 
 ```sh
@@ -283,6 +289,18 @@ Get an interactive shell
 
 ```sh
 k exec -it <pod_name> -- sh
+```
+
+- Attach to running process
+
+```sh
+k attach -it <pod-name>
+```
+
+#### Copy files
+
+```sh
+k cp <pod-name>:</path/to/remote/file> </path/to/local/file>
 ```
 
 #### Port Forward
@@ -566,6 +584,18 @@ go install sigs.k8s.io/kind@v0.25.0
 
 ```sh
 kind create cluster --config <config_file> --name <cluster_name>
+```
+
+- Lists existing kind clusters
+
+```sh
+kind get clusters
+```
+
+- Get `kubeconfig` of the cluster
+
+```sh
+kind get kubeconfig --name <cluster_name>
 ```
 
 - Delete a cluster
