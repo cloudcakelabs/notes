@@ -921,6 +921,25 @@ set -g mouse on
 bind z source-file ~/.tmux.conf
 ```
 
+#### `~/.bash_aliases`
+
+```sh
+# https://opensource.com/article/19/7/bash-aliases
+# Sort by modification time
+alias ll="ls -lthrA --color=auto"
+# Sort by file size
+alias lt='ls --human-readable --size -1 -S --classify'
+# View only mounted drives
+alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+# Count files
+alias count='find . -type f | wc -l'
+# Add a copy progress bar
+alias cpv='rsync -ah --info=progress2' 
+# Find a command in your grep history
+# Example: gh <search_something>
+alias gh='history | grep'
+```
+
 ### Date and time
 
 #### Show current time settings
