@@ -7,7 +7,7 @@
 #### Find large files
 
 ```sh
-find /path/to/dir -type f -exec du -h {} + | sort -hr | head -20
+find /path/to/dir -type f -exec du -h --time {} + | sort -hr | head -20
 ```
 
 ```sh
