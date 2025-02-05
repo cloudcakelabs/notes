@@ -1014,6 +1014,18 @@ echo -n 'string' | base64 --decode
 base64 --decode </path/to/file>
 ```
 
+### Shell scripting
+
+- Read a file line by line
+
+```sh
+FILE_PATH=<path_file>
+
+while IFS= read -r line; do
+    echo "${line}"
+done < "${FILE_PATH}"
+```
+
 ## RedHat-based Linux
 
 ### Admin
