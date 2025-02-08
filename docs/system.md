@@ -7,32 +7,32 @@
 #### Find large files
 
 ```sh
-find /path/to/dir -type f -exec du -h --time {} + | sort -hr | head -20
+find [path] -type f -exec du -h --time {} + | sort -hr | head -20
 ```
 
 ```sh
-find /path/to/dir -type f -printf "%s\t%p\n" | sort -rh | head -20
+find [path] -type f -printf "%s\t%p\n" | sort -rh | head -20
 ```
 
 ```sh
-find /path/to/dir -type f -exec ls -s {} + | sort -n -r | head -20
+find [path] -type f -exec ls -s {} + | sort -n -r | head -20
 ```
 
 ```sh
 # Do not cross filesystems
-find /path/to/dir -xdev -type f -exec ls -s {} + | sort -n -r | head -20
+find [path] -xdev -type f -exec ls -s {} + | sort -n -r | head -20
 ```
 
 #### Display files older than 60 days
 
 ```sh
-find /path/to/dir -type f -mtime +60 -exec ls -s {} \;
+find [path] -type f -mtime +60 -exec ls -s {} \;
 ```
 
 #### Delete files older than 60 days
 
 ```sh
-find /path/to/dir -type f -mtime +60 -exec rm -f {} \;
+find [path] -type f -mtime +60 -exec rm -f {} \;
 ```
 
 #### Find and exec a command
@@ -40,13 +40,13 @@ find /path/to/dir -type f -mtime +60 -exec rm -f {} \;
 ```sh
 find [path] [args] -exec [command] {} \;
 # example
-find /path/to/dir -type f -exec cp {} {}.bak \;
+find [path] -type f -exec cp {} {}.bak \;
 ```
 
 `--relative` flag creates subdirectories in the target directory
 
 ```sh
-find /path/to/dir/ -type f -name <name> -exec rsync -av --relative {} /path/to/dir/ \;
+find [path]/ -type f -name [name] -exec rsync -av --relative {} [path] \;
 ```
 
 #### Sort by size
@@ -58,7 +58,7 @@ ls -lha --sort=size
 #### Get absolute path of a file
 
 ```sh
-realpath <filename>
+realpath [filename]
 ```
 
 #### Sync directories
@@ -83,13 +83,13 @@ command &> /dev/null
 #### Get some informations about a program
 
 ```sh
-file <program>
+file [program]
 ```
 
 #### Print shared object dependencies
 
 ```sh
-ldd <program>
+ldd [program]
 ```
 
 #### Display permissions and user/group with `tree`
@@ -103,13 +103,13 @@ tree -pugfiaD /path/to/dir
 - View file extended attributes
 
 ```sh
-lsattr <file>
+lsattr [file]
 ```
 
 - Set the immuable flag
 
 ```sh
-chattr +i <file>
+chattr +i [file]
 ```
 
 ### Memory, CPU and process management
@@ -161,13 +161,13 @@ ps -eo user,pid,ppid,lstart,%mem,%cpu,cmd --sort=start_time | awk 'NR == 1 || /[
 #### List file descriptors
 
 ```sh
-lsof -a -p <PID>
+lsof -a -p [PID]
 ```
 
 #### List processes based on name/pattern
 
 ```sh
-pgrep -fa '<pattern>'
+pgrep -fa '[pattern]'
 # example
 pgrep -fa 'rsync'
 ```
@@ -175,7 +175,7 @@ pgrep -fa 'rsync'
 #### Kill processes based on name/pattern
 
 ```sh
-pkill -f '<pattern>'
+pkill -f '[pattern]'
 ```
 
 #### Show CPU details
@@ -193,25 +193,25 @@ top
 #### Display a tree of processes
 
 ```sh
-pstree -laps <pid>
+pstree -laps [pid]
 ```
 
 #### Keep processes running after exiting the shell
 
 ```sh
-nohup <command> &
+nohup [command] &
 ```
 
 - Redirect to a file and to standard error and output
 
 ```sh
-nohup <command> > output.log 2>&1 &
+nohup [command] > output.log 2>&1 &
 ```
 
 - Different files for standard output and error
 
 ```sh
-nohup <command> 1> output.log 2> error.log &
+nohup [command] 1> output.log 2> error.log &
 ```
 
 #### Clear cache/buffer
@@ -258,7 +258,7 @@ iostat -p /dev/sda1
 - Display file system types
 
 ```sh
-lsblk -o PATH,FSTYPE,MOUNTPOINT <partition_name>
+lsblk -o PATH,FSTYPE,MOUNTPOINT [partition_name]
 ```
 
 Example
@@ -270,7 +270,7 @@ lsblk -o PATH,FSTYPE,MOUNTPOINT /dev/sda
 - Extend a filesystem(with `-r|--resizefs`)
 
 ```sh
-lvextend -L +<size> <filesystem> -r
+lvextend -L +[size] [filesystem] -r
 ```
 
 Example
@@ -282,7 +282,7 @@ lvextend -L +2G /dev/mapper/vg_root-lv_home -r
 - Increase size of an XFS filesystem
 
 ```sh
-xfs_growfs -d <filesystem>
+xfs_growfs -d [filesystem]
 ```
 
 Example
@@ -294,7 +294,7 @@ xfs_growfs -d /dev/mapper/vg_root-lv_home
 ### DNS queries
 
 ```sh
-dig +noall +answer +multiline <fqdn>
+dig +noall +answer +multiline [fqdn]
 ```
 
 ### Managing Users
@@ -302,13 +302,13 @@ dig +noall +answer +multiline <fqdn>
 Add user
 
 ```sh
-useradd -d <home_dir> -s <shell> <username> -G <group1> <group2>
+useradd -d [home_dir] -s [shell] [username] -G [group1] [group2]
 ```
 
 Change password
 
 ```sh
-passwd <username>
+passwd [username]
 ```
 
 ### SSH
@@ -316,11 +316,11 @@ passwd <username>
 #### Generate SSH key pair
 
 ```sh
-ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "<email or comment>"
+ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "[email or comment]"
 ```
 
 ```sh
-ssh-keygen -t rsa -b 4096 -C "<email or comment>"
+ssh-keygen -t rsa -b 4096 -C "[email or comment]"
 ```
 
 #### Start ssh-agent in the background
@@ -362,37 +362,37 @@ grep sshd /var/log/secure
 #### Check a certificate
 
 ```sh
-openssl x509 -in <srv.crt> -text -noout
+openssl x509 -in [srv].crt -text -noout
 ```
 
 #### Extract the private key from the PFX file
 
 ```sh
-openssl pkcs12 -in <file>.pfx -nocerts -out <private>.key
+openssl pkcs12 -in [file].pfx -nocerts -out [private].key
 ```
 
 #### Extract the certificate from the PFX file
 
 ```sh
-openssl pkcs12 -in <file>.pfx -clcerts -nokeys -out <certificate>.crt
+openssl pkcs12 -in [file].pfx -clcerts -nokeys -out [certificate].crt
 ```
 
 #### Extract the decrypted private key
 
 ```sh
-openssl rsa -in <private>.key -out <decrypted>.key
+openssl rsa -in [private].key -out [decrypted].key
 ```
 
 #### Extract the CA chain from the PFX file
 
 ```sh
- openssl pkcs12 -in <file>.pfx -cacerts -nokeys -chain -out <ca>.pem
+ openssl pkcs12 -in [file].pfx -cacerts -nokeys -chain -out [ca].pem
 ```
 
 #### Get a website certificate
 
 ```sh
-echo | openssl s_client -showcerts -servername <example.com> -connect <example.com>:443 2>/dev/null | openssl x509 -inform pem -noout -text
+echo | openssl s_client -showcerts -servername [example.com] -connect [example.com]:443 2>/dev/null | openssl x509 -inform pem -noout -text
 ```
 
 ### Git
@@ -400,16 +400,18 @@ echo | openssl s_client -showcerts -servername <example.com> -connect <example.c
 #### Setup git configuration
 
 ```sh
-git config --global user.name "<name>"
+git config --global user.name "[name]"
 ```
 
 ```sh
-git config --global user.email "<email>"
+git config --global user.email "[email]"
 ```
 
 ```sh
-git config --global http.proxy http://<ip_or_fqdn>:<port>
+git config --global http.proxy http://[ip_or_fqdn]:[port]
 ```
+
+- [Customizing Git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
 #### Work with Git
 
@@ -422,7 +424,7 @@ git add -A
 #### Commit staged changes
 
 ```sh
-git commit -m <commit_message>
+git commit -m [commit_message]
 ```
 
 - Edit previous commit message
@@ -434,7 +436,7 @@ git commit --amend
 #### Revert to a previous commit
 
 ```sh
-git reset <commit_id> --hard
+git reset [commit_id] --hard
 ```
 
 #### Discard local changes
@@ -444,7 +446,7 @@ git fetch origin
 ```
 
 ```sh
-git reset --hard origin/<branch_name>
+git reset --hard origin/[branch_name]
 ```
 
 ### Vim
@@ -544,7 +546,7 @@ journalctl -f
 Monitor logs in real-time for a specific service
 
 ```sh
-journalctl -u <unit> -f
+journalctl -u [unit] -f
 ```
 
  Show log entries since a specific date and time.
@@ -612,21 +614,21 @@ nmcli device status
 Get details about connection
 
 ```sh
-nmcli con show <con_name>
+nmcli con show [con_name]
 ```
 
 Configure network
 
 ```sh
-nmcli con mod <con_name> connection.autoconnect yes
+nmcli con mod [con_name] connection.autoconnect yes
 ```
 
 ```sh
-nmcli con mod <con_name> ipv4.addresses <ip_addr/mask> ipv4.method manual ipv4.gateway <gw> ipv4.dns "<dns1> <dns2>" ipv4.dns-search <domain>
+nmcli con mod [con_name] ipv4.addresses [ip_addr/mask] ipv4.method manual ipv4.gateway [gw] ipv4.dns "[dns1] [dns2]" ipv4.dns-search [domain]
 ```
 
 ```sh
-nmcli con up <con_name>
+nmcli con up [con_name]
 ```
 
 Restart NetworkManager
@@ -638,7 +640,7 @@ systemctl restart NetworkManager
 #### Network configuration with network scripts[(doc)](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/6/html/deployment_guide/ch-network_interfaces#ch-Network_Interfaces)
 
 ```sh
-vim /etc/sysconfig/network-scripts/ifcfg-<if_name>
+vim /etc/sysconfig/network-scripts/ifcfg-[if_name]
 ```
 
 Example
@@ -688,17 +690,17 @@ ss --tcp state CLOSE-WAIT --kill
 #### Test TCP connections
 
 ```sh
-nc -zv <ip_dst> <port>
+nc -zv [ip_dst] [port]
 ```
 
 ```sh
-nc -zv -s <ip_src> <ip_dst> <port>
+nc -zv -s [ip_src] [ip_dst] [port]
 ```
 
 #### Test UDP connections
 
 ```sh
-nc -zv -u <ip_dst> <port>
+nc -zv -u [ip_dst] [port]
 ```
 
 ### Debug
@@ -706,15 +708,15 @@ nc -zv -u <ip_dst> <port>
 #### tcpdump (with root)
 
 ```sh
-tcpdump -i <interface name> -w <filename>.pcap
+tcpdump -i [interface name] -w [filename].pcap
 ```
 
 ```sh
-tcpdump -i <interface name> dst <ip addr or fqdn> -w <filename>.pcap
+tcpdump -i [interface name] dst [ip addr or fqdn] -w [filename].pcap
 ```
 
 ```sh
-tcpdump -i <interface name> port <port> -w <filename>.pcap
+tcpdump -i [interface name] port [port] -w [filename].pcap
 ```
 
 #### md5sum or sha256sum
@@ -737,7 +739,7 @@ sha256sum --check hashes.txt
 ```
 
 ```sh
-echo "<hash>  <filename>" | sha256sum --check
+echo "[hash]  [filename]" | sha256sum --check
 ```
 
 ```sh
@@ -745,7 +747,7 @@ echo -n 'hi' | sha256sum
 ```
 
 ```sh
-sha256sum <filename>
+sha256sum [filename]
 ```
 
 #### Hardware
@@ -760,13 +762,13 @@ lsusb
 Basic usage
 
 ```sh
-strace <command>
+strace [command]
 ```
 
 Attach to an running process
 
 ```sh
-strace -p <pid>
+strace -p [pid]
 ```
 
 ### Auditd
@@ -786,7 +788,7 @@ ausearch --start yesterday --end now -m SYSCALL -sv no -i
 #### AUID system call
 
 ```sh
-ausearch --start yesterday --end now -ua <auid> -i
+ausearch --start yesterday --end now -ua [auid] -i
 ```
 
 #### List of login events
@@ -983,13 +985,13 @@ rabbitmqctl list_consumers
 - Extract full paths of json keys
 
 ```sh
-jq -r '[paths | join(".")]'  <json_file>
+jq -r '[paths | join(".")]'  [json_file]
 ```
 
 Example
 
 ```sh
-k get deploy <deployment_name> -o json | jq -r '[paths | join(".")]'
+k get deploy [deployment_name] -o json | jq -r '[paths | join(".")]'
 ```
 
 - Base64 Encoding/Decoding
@@ -1001,7 +1003,7 @@ echo -n 'string' | base64
 ```
 
 ```sh
-base64 </path/to/file>
+base64 [filename]
 ```
 
 Decoding
@@ -1034,37 +1036,37 @@ done < "${FILE_PATH}"
 
 ```sh
 dnf list installed
-dnf list installed | grep <package_name>
+dnf list installed | grep [package_name]
 ```
 
 #### List all available versions of a package
 
 ```sh
-dnf list <package_name> --showduplicates
+dnf list [package_name] --showduplicates
 ```
 
 #### Update a package
 
 ```sh
-dnf update <package_name>
+dnf update [package_name]
 ```
 
 #### Download RPM package file
 
 ```sh
-dnf download <package_name>
+dnf download [package_name]
 ```
 
 - Resolve and download needed dependencies
 
 ```sh
-dnf download --resolve <package_name>
+dnf download --resolve [package_name]
 ```
 
 #### Downgrade a package
 
 ```sh
-dnf downgrade <package_name>-<version>
+dnf downgrade [package_name]-[version]
 ```
 
 #### `versionlock`: Protect packages from being updated
@@ -1074,7 +1076,7 @@ dnf install python3-dnf-plugin-versionlock -y
 ```
 
 ```sh
-dnf versionlock <package_name>-<version>
+dnf versionlock [package_name]-[version]
 ```
 
 ```sh
@@ -1084,7 +1086,7 @@ dnf versionlock list
 #### Finds the packages providing the given file
 
 ```sh
-dnf provides <filename>
+dnf provides [filename]
 ```
 
 #### Exclude package from getting updated
@@ -1134,7 +1136,7 @@ dnf repolist --all
 Disable a repo
 
 ```sh
-dnf config-manager --disable <repo_name>
+dnf config-manager --disable [repo_name]
 ```
 
 Show disabled repos
@@ -1146,7 +1148,7 @@ dnf repolist --disabled
 Enable a repo
 
 ```sh
-dnf config-manager --enable <repo_name>
+dnf config-manager --enable [repo_name]
 ```
 
 Show enabled repos
@@ -1220,19 +1222,19 @@ dnf update --security --bugfix
 #### Display information about CVE
 
 ```sh
-dnf updateinfo list --cve=<cve_id>
+dnf updateinfo list --cve=[cve_id]
 ```
 
 #### Display information about RHSA ID
 
 ```sh
-dnf updateinfo info <advisory_id>
+dnf updateinfo info [advisory_id]
 ```
 
 #### Install specific update
 
 ```sh
-dnf update --advisory=<advisory_id>
+dnf update --advisory=[advisory_id]
 ```
 
 Example
@@ -1248,7 +1250,7 @@ dnf update --advisory=RHSA-2023:4102
 - Test a connection
 
 ```powershell
-Test-NetConnection <ip_addr or fqdn> -port <port>
+Test-NetConnection [ip_addr or fqdn] -port [port]
 ```
 
 - Network stats
