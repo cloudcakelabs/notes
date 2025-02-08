@@ -46,7 +46,7 @@ find [path] -type f -exec cp {} {}.bak \;
 `--relative` flag creates subdirectories in the target directory
 
 ```sh
-find [path]/ -type f -name [name] -exec rsync -av --relative {} [path] \;
+find [path]/ -type f -name [name] -exec rsync -av --relative {} [path]/ \;
 ```
 
 #### Sort by size
@@ -64,7 +64,7 @@ realpath [filename]
 #### Sync directories
 
 ```sh
-rsync -av --delete --progress /src/ /dst/
+rsync -av --delete --progress [src]/ [dst]/
 ```
 
 #### Redirect stderr and stdout
@@ -95,7 +95,7 @@ ldd [program]
 #### Display permissions and user/group with `tree`
 
 ```sh
-tree -pugfiaD /path/to/dir
+tree -pugfiaD [directory]
 ```
 
 #### Prevent file/dir modification and deletion
@@ -1013,7 +1013,13 @@ echo -n 'string' | base64 --decode
 ```
 
 ```sh
-base64 --decode </path/to/file>
+base64 --decode [filename]
+```
+
+- Convert Yaml file to Json file
+
+```sh
+yq -o=json [yaml_file] > [json_file]
 ```
 
 ### Shell scripting
