@@ -436,7 +436,15 @@ git commit --amend
 #### Revert to a previous commit
 
 ```sh
-git reset [commit_id] --hard
+git reset --hard HEAD~
+```
+
+```sh
+git reset --soft HEAD~
+```
+
+```sh
+git reset --hard [commit_id]
 ```
 
 #### Discard local changes
@@ -447,6 +455,24 @@ git fetch origin
 
 ```sh
 git reset --hard origin/[branch_name]
+```
+
+#### Diff between commits
+
+```sh
+git diff [commit_id]..[commit_id]
+```
+
+#### Diff between last commit and the working tree
+
+```sh
+git diff
+```
+
+#### Show informations recorded in the reflogs
+
+```sh
+git reflog show
 ```
 
 ### Vim
@@ -988,7 +1014,7 @@ rabbitmqctl list_consumers
 jq -r '[paths | join(".")]'  [json_file]
 ```
 
-Example
+  * Example
 
 ```sh
 k get deploy [deployment_name] -o json | jq -r '[paths | join(".")]'
@@ -1032,6 +1058,14 @@ FILE_PATH=<path_file>
 while IFS= read -r line; do
     echo "${line}"
 done < "${FILE_PATH}"
+```
+
+- List all executables
+
+```sh
+IFS=:;
+set -f;
+find -L $PATH -maxdepth 1 -type f -perm -100 -print;
 ```
 
 ## RedHat-based Linux
