@@ -347,6 +347,35 @@ ssh -o StrictHostKeyChecking=no username@remotehost
 echo ~ | nc localhost 22
 ```
 
+#### Permissions
+
+```sh
+chmod 700 ~/.ssh
+chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/known_hosts
+chmod 644 ~/.ssh/config
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+```
+
+#### User config file
+
+```sh
+Host *
+    LogLevel error
+Host [name1]
+    HostName [ip or fqdn]
+    User [username]
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa
+Host [name2]
+    HostName [ip or fqdn]
+    User [username]
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa
+    ProxyCommand ssh -W %h:%p [name1]
+```
+
 #### Logs
 
 ```sh
