@@ -1350,5 +1350,5 @@ Get-NetRoute
 
 |          |         |
 | -------- | ------- |
-| `ctrl + alt + F2`  | Get a virtual terminal |
-| `ctrl + alt + F9`  | Back to X |
+| `ctrl + alt + F2`  | x11: Get a virtual terminal |
+| `ctrl + alt + F9`  | x11: Back to X |
