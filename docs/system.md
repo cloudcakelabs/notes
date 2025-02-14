@@ -774,7 +774,7 @@ tcpdump -i [interface name] dst [ip addr or fqdn] -w [filename].pcap
 tcpdump -i [interface name] port [port] -w [filename].pcap
 ```
 
-#### md5sum or sha256sum
+#### Checksum: md5sum or sha256sum
 
 ```sh
 find -type f -exec md5sum '{}' \;
