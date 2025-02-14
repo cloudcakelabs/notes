@@ -1077,6 +1077,12 @@ base64 --decode [filename]
 yq -o=json [yaml_file] > [json_file]
 ```
 
+- Diff between two directories
+
+```sh
+diff -r [dir_a] [dir_b]
+```
+
 ### Shell scripting
 
 - Read a file line by line
