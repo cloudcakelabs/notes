@@ -1083,6 +1083,12 @@ yq -o=json [yaml_file] > [json_file]
 diff -r [dir_a] [dir_b]
 ```
 
+- Remove comments and blank lines
+
+```sh
+grep -Ev '^$|#' [filename]
+```
+
 ### Shell scripting
 
 - Read a file line by line
