@@ -306,7 +306,7 @@ k cp [pod_name]:[/path/to/remote/file] [/path/to/local/file]
 #### Port Forward
 
 ```sh
-k port-forward --address [local_ip_addr] [pod_name] [local_port]:[remote_port]
+k port-forward --address [local_ip_addr] pod/[pod_name] [local_port]:[remote_port]
 ```
 
 Example

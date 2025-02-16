@@ -418,19 +418,19 @@ fedora@192.168.0.10:/data /mnt/data sshfs
 #### Check a certificate
 
 ```sh
-openssl x509 -in [srv.crt] -text -noout
+openssl x509 -in [certificate].crt -text -noout
 ```
 
 #### Extract the private key from the PFX file
 
 ```sh
-openssl pkcs12 -in [file.pfx] -nocerts -out [private.key]
+openssl pkcs12 -in [file].pfx -nocerts -out [private].key
 ```
 
 #### Extract the certificate from the PFX file
 
 ```sh
-openssl pkcs12 -in [file.pfx] -clcerts -nokeys -out [certificate.crt]
+openssl pkcs12 -in [file].pfx -clcerts -nokeys -out [certificate].crt
 ```
 
 #### Extract the decrypted private key
