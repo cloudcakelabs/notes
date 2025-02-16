@@ -397,7 +397,7 @@ dnf install fuse-sshfs
 #### Mount a remote FS
 
 ```sh
-sshfs [user@]host:[dir] [mountpoint] [options]
+sshfs [user]@[host]:[dir] [mountpoint] [options]
 ```
 
 Example
