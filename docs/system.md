@@ -394,7 +394,7 @@ grep sshd /var/log/secure
 dnf install fuse-sshfs
 ```
 
-### Mount a remote FS
+#### Mount a remote FS
 
 ```sh
 sshfs [user@]host:[dir] [mountpoint] [options]
@@ -406,7 +406,7 @@ Example
 sshfs fedora@192.168.0.10:/data /mnt/data
 ```
 
-### Automatically mount the remote FS
+#### Automatically mount the remote FS
 
 ```sh
 # file: /etc/fstab
