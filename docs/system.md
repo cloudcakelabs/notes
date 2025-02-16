@@ -418,31 +418,31 @@ fedora@192.168.0.10:/data /mnt/data sshfs
 #### Check a certificate
 
 ```sh
-openssl x509 -in [srv].crt -text -noout
+openssl x509 -in [srv.crt] -text -noout
 ```
 
 #### Extract the private key from the PFX file
 
 ```sh
-openssl pkcs12 -in [file].pfx -nocerts -out [private].key
+openssl pkcs12 -in [file.pfx] -nocerts -out [private.key]
 ```
 
 #### Extract the certificate from the PFX file
 
 ```sh
-openssl pkcs12 -in [file].pfx -clcerts -nokeys -out [certificate].crt
+openssl pkcs12 -in [file.pfx] -clcerts -nokeys -out [certificate.crt]
 ```
 
 #### Extract the decrypted private key
 
 ```sh
-openssl rsa -in [private].key -out [decrypted].key
+openssl rsa -in [private.key] -out [decrypted.key]
 ```
 
 #### Extract the CA chain from the PFX file
 
 ```sh
- openssl pkcs12 -in [file].pfx -cacerts -nokeys -chain -out [ca].pem
+ openssl pkcs12 -in [file.pfx] -cacerts -nokeys -chain -out [ca.pem]
 ```
 
 #### Get a website certificate
@@ -529,6 +529,40 @@ git diff
 
 ```sh
 git reflog show
+```
+
+#### `~/.gitconfig`
+
+```sh
+[credential]
+  helper = store --file /path/to/.gitcred
+[user]
+  name = <name>
+  email = <email>
+    # GPG config
+  signingkey = <signingkey>
+[http]
+[http "https://gitlab.example.com"]
+  proxy = http://<ip or fqdn>:<port>
+[core]
+    # vscode as a default editor
+  editor = code --wait
+[commit]
+    # GPG config
+  gpgsign = true
+[alias]
+  graph = log --oneline --graph --decorate
+  llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+  acp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+```
+
+Multiple configs
+
+```sh
+[includeIf "gitdir:~/personal/"]
+  path = ~/.gitconfig-personal
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig-work
 ```
 
 ### Vim
@@ -938,40 +972,6 @@ set colored-stats on
 "\e[6~": menu-complete-backward
 # pgdn
 "\e[5~": menu-complete
-```
-
-#### `~/.gitconfig`
-
-```sh
-[credential]
-  helper = store --file /path/to/.gitcred
-[user]
-  name = <name>
-  email = <email>
-    # GPG config
-  signingkey = <signingkey>
-[http]
-[http "https://gitlab.example.com"]
-  proxy = http://<ip or fqdn>:<port>
-[core]
-    # vscode as a default editor
-  editor = code --wait
-[commit]
-    # GPG config
-  gpgsign = true
-[alias]
-  graph = log --oneline --graph --decorate
-  llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
-  acp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
-```
-
-Multiple configs
-
-```sh
-[includeIf "gitdir:~/personal/"]
-  path = ~/.gitconfig-personal
-[includeIf "gitdir:~/work/"]
-  path = ~/.gitconfig-work
 ```
 
 #### `~/.tmux.conf`
