@@ -386,6 +386,33 @@ tail -f -n 100 /var/log/secure | grep sshd
 grep sshd /var/log/secure
 ```
 
+### SSHFS
+
+#### Install(client side)
+
+```sh
+dnf install fuse-sshfs
+```
+
+### Mount a remote FS
+
+```sh
+sshfs [user@]host:[dir] [mountpoint] [options]
+```
+
+Example
+
+```sh
+sshfs fedora@192.168.0.10:/data /mnt/data
+```
+
+### Automatically mount the remote FS
+
+```sh
+# file: /etc/fstab
+fedora@192.168.0.10:/data /mnt/data sshfs
+```
+
 ### SSL
 
 #### Check a certificate
@@ -1117,7 +1144,14 @@ find -L $PATH -maxdepth 1 -type f -perm -100 -print;
 
 ```sh
 dnf list installed
+```
+
+```sh
 dnf list installed | grep [package_name]
+```
+
+```sh
+rpm -qa | grep [package_name]
 ```
 
 #### List all available versions of a package
