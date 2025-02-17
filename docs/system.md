@@ -1116,6 +1116,16 @@ diff -r [dir_a] [dir_b]
 grep -Ev '^$|#' [filename]
 ```
 
+- [Create kickstart boot ISO](https://weldr.io/lorax/mkksiso.html)
+
+```sh
+dnf install lorax
+```
+
+```sh
+mkksiso -a [file or directory] [kickstart].ks [installer].iso [updated_installer].iso
+```
+
 ### Shell scripting
 
 - Read a file line by line
