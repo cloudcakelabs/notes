@@ -291,6 +291,8 @@ Example
 xfs_growfs -d /dev/mapper/vg_root-lv_home
 ```
 
+- [Increase the size of a Linux LVM by expanding the virtual machine disk](https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-expanding-the-virtual-machine-disk/)
+
 ### DNS queries
 
 ```sh
