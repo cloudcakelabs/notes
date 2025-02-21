@@ -471,6 +471,12 @@ git config --global http.proxy http://[ip_or_fqdn]:[port]
 
 - [Customizing Git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
+#### Display config
+
+```sh
+git config --list
+```
+
 #### Work with Git
 
 #### Stage all changes
