@@ -296,7 +296,7 @@ xfs_growfs -d /dev/mapper/vg_root-lv_home
 ### DNS queries
 
 ```sh
-dig +noall +answer +multiline [fqdn]
+dig +noall +answer +multiline [fqdn] any
 ```
 
 ### Managing Users
