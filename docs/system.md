@@ -299,6 +299,10 @@ xfs_growfs -d /dev/mapper/vg_root-lv_home
 dig +noall +answer +multiline [fqdn] any
 ```
 
+```sh
+for record_type in A AAAA CNAME MX NS TXT; do dig +noall +answer +multiline <fqdn> "${record_type}"; done
+```
+
 ### Managing Users
 
 Add user
