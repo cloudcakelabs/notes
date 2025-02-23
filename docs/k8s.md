@@ -59,7 +59,7 @@ k config get-contexts
 #### Set the default context
 
 ```sh
-k config use-context [context_name]
+k config use-context <context_name>
 ```
 
 #### Merging kubeconfig files
@@ -91,13 +91,13 @@ k get nodes
 - Display resource usage (cpu/memory) for node
 
 ```sh
-k top node [pod_name]
+k top node <pod_name>
 ```
 
 - Pods running on a node
 
 ```sh
-k get pods -o wide | grep [pod_name]
+k get pods -o wide | grep <pod_name>
 ```
 
 - Get custom info about Nodes
@@ -115,13 +115,13 @@ k get namespaces
 ```
 
 ```sh
-k get namespace [namespace]
+k get namespace <namespace>
 ```
 
 #### Display details about namespace
 
 ```sh
-k describe namespace [namespace]
+k describe namespace <namespace>
 ```
 
 ### Deployments
@@ -135,29 +135,29 @@ k get deployment
 - Get details about a deployment
 
 ```sh
-k describe deployment [deployment_name]
+k describe deployment <deployment_name>
 ```
 
 - Scale up/down a deployment
 
 ```sh
-k scale --replicas=[number] deployment/[deployment_name]
+k scale --replicas=[number] deployment/<deployment_name>
 ```
 
 - Get deployment history
 
 ```sh
-k rollout history deployment [deployment_name]
+k rollout history deployment <deployment_name>
 ```
 
 ```sh
-k rollout history deployment [deployment_name] --revision=[revision_number]
+k rollout history deployment <deployment_name>--revision=[revision_number]
 ```
 
 - Compare two revisions
 
 ```sh
-diff <(k rollout history deployment [deployment_name] --revision=[revision_number]) <(k rollout history deployment [deployment_name] --revision=[revision_number])
+diff <(k rollout history deployment <deployment_name>--revision=[revision_number]) <(k rollout history deployment <deployment_name>--revision=[revision_number])
 ```
 
 ### Daemonsets
@@ -171,7 +171,7 @@ k get daemonset
 - Display detailed state of daemonset
 
 ```sh
-k describe ds [daemonset_name]
+k describe ds <daemonset_name>
 ```
 
 ### StatefulSet
@@ -185,7 +185,7 @@ k get statefulset
 - Scale Up/Down
 
 ```sh
-k scale --replicas=[number] sts [sts_name]
+k scale --replicas=[number] sts <sts_name>
 ```
 
 ### Pods
@@ -207,11 +207,11 @@ k get pods --show-labels
 #### Get information about a Pod
 
 ```sh
-k get pod [pod_name] -o wide
+k get pod <pod_name> -o wide
 ```
 
 ```sh
-k describe pod [pod_name]
+k describe pod <pod_name>
 ```
 
 Sort pods list using specified field. The field can be either 'cpu' or 'memory'
@@ -227,86 +227,86 @@ Sort pods list using specified field. The field can be either 'cpu' or 'memory'
 #### Get IP addr from Pod definition
 
 ```sh
-k get pod [pod_name] --output=jsonpath='{..podIP}'
+k get pod <pod_name> --output=jsonpath='{..podIP}'
 ```
 
 ```sh
-k get pod [pod_name] --output=jsonpath='{..podIPs}'
+k get pod <pod_name> --output=jsonpath='{..podIPs}'
 ```
 
 #### Logs
 
 ```sh
-k logs [pod_name]
+k logs <pod_name>
 ```
 
 ```sh
-k logs --since=1h [pod_name]
+k logs --since=1h <pod_name>
 ```
 
 ```sh
-k logs --tail=50 [pod_name]
+k logs --tail=50 <pod_name>
 ```
 
 ```sh
-k logs -f [pod_name]
+k logs -f <pod_name>
 ```
 
 ```sh
-k logs [pod_name] [pod_name].log
+k logs <pod_name> <pod_name>.log
 ```
 
 ```sh
-k logs --previous [pod_name]
+k logs --previous <pod_name>
 ```
 
 ```sh
-k logs -c [container_name] [pod_name]
+k logs -c <container_name> <pod_name>
 ```
 
 Logs with label selector
 (10 lines if a selector is provided)
 
 ```sh
-k logs -l app.kubernetes.io/instance=[my_label] -n [namespace] 
+k logs -l app.kubernetes.io/instance=[my_label] -n <namespace> 
 ```
 
 #### Exec command
 
 ```sh
-k exec [pod_name] -- ls /
+k exec <pod_name> -- ls /
 ```
 
 ```sh
-k exec [pod_name] -c [container_name] -- ls /
+k exec <pod_name> -c <container_name> -- ls /
 ```
 
 ```sh
-k exec --stdin --tty [pod_name] -- /bin/sh 
+k exec --stdin --tty <pod_name> -- /bin/sh 
 ```
 
 Get an interactive shell
 
 ```sh
-k exec -it [pod_name] -- sh
+k exec -it <pod_name> -- sh
 ```
 
 - Attach to running process
 
 ```sh
-k attach -it [pod_name]
+k attach -it <pod_name>
 ```
 
 #### Copy files
 
 ```sh
-k cp [pod_name]:[/path/to/remote/file] [/path/to/local/file]
+k cp <pod_name>:</path/to/remote/file> </path/to/local/file>
 ```
 
 #### Port Forward
 
 ```sh
-k port-forward --address [local_ip_addr] pod/[pod_name] [local_port]:[remote_port]
+k port-forward --address <local_ip_addr> pod/<pod_name> <local_port>:<remote_port>
 ```
 
 Example
@@ -328,19 +328,19 @@ k get rs | awk '{if ($2 != 0) print $0}'
 ```
 
 ```sh
-k describe rs/[rs_name]
+k describe rs/<rs_name>
 ```
 
 - Delete Pod
 
 ```sh
-k delete pod [pod_name]
+k delete pod <pod_name>
 ```
 
 - Force Pod deletion
 
 ```sh
-k delete pod --grace-period=0 --force [pod_name]
+k delete pod --grace-period=0 --force <pod_name>
 ```
 
 - List all Container images
@@ -362,7 +362,7 @@ k get pods -o jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .sp
 #### Get restartCount and state
 
 ```sh
-k get pods [pod_name] -o jsonpath='{.spec.containers[*].name} {.status.containerStatuses[*].restartCount} {.status.containerStatuses[*].state}'
+k get pods <pod_name> -o jsonpath='{.spec.containers[*].name} {.status.containerStatuses[*].restartCount} {.status.containerStatuses[*].state}'
 ```
 
 #### Get Pods resources requests/limits
@@ -398,13 +398,13 @@ k get pods -o custom-columns='POD_NAME:.metadata.name,READY_AT:.status.condition
 Running state(using `jq`)
 
 ```sh
-k get pod [pod_name] -o json | jq '.status.containerStatuses[].state'
+k get pod <pod_name> -o json | jq '.status.containerStatuses[].state'
 ```
 
 Ready state(using `jq`)
 
 ```sh
-k get pod [pod_name] -o json | jq '.status.conditions[] | select(.type=="Ready")'
+k get pod <pod_name> -o json | jq '.status.conditions[] | select(.type=="Ready")'
 ```
 
 ### Events
@@ -448,19 +448,19 @@ k get event -o custom-columns=NAME:.metadata.name | cut -d "." -f1
 ### Cordon the node(marked as unschedulable)
 
 ```sh
-k cordon [node_name]
+k cordon <node_name>
 ```
 
 ### Drain the workloads for the node
 
 ```sh
-k drain [node_name] --ignore-daemonsets 
+k drain <node_name> --ignore-daemonsets 
 ```
 
 ### Uncordon the node(marked as schedulable)
 
 ```sh
-k uncordon [node_name]
+k uncordon <node_name>
 ```
 
 ## Helm
@@ -484,7 +484,7 @@ helm search repo
 ```
 
 ```sh
-helm search repo [chart_name]
+helm search repo <chart_name>
 ```
 
 - List all versions of all charts
@@ -494,7 +494,7 @@ helm search repo -l
 ```
 
 ```sh
-helm search repo -l [chart_name]
+helm search repo -l <chart_name>
 ```
 
 - List the dependencies for the given chart
@@ -506,7 +506,7 @@ helm dependency list
 - Locally render templates
 
 ```sh
-helm template . --output-dir [path]
+helm template . --output-dir <path>
 ```
 
 ## Rancher, RKE2 and K3S
@@ -583,7 +583,7 @@ go install sigs.k8s.io/kind@v0.25.0
 - Create a cluster
 
 ```sh
-kind create cluster --config [config_file] --name [cluster_name]
+kind create cluster --config <config_file> --name <cluster_name>
 ```
 
 - Lists existing kind clusters
@@ -595,13 +595,13 @@ kind get clusters
 - Get `kubeconfig` of the cluster
 
 ```sh
-kind get kubeconfig --name [cluster_name]
+kind get kubeconfig --name <cluster_name>
 ```
 
 - Delete a cluster
 
 ```sh
-kind delete cluster --name [cluster_name]
+kind delete cluster --name <cluster_name>
 ```
 
 ### Known Issues

@@ -9,13 +9,19 @@ Apply specific state from a minion[(doc)](https://docs.saltproject.io/en/latest/
 `sal-call` or `venv-salt-call`(SUSE Manager version)
 
 ```sh
-venv-salt-call state.apply [sls] --state_output=changes
+venv-salt-call state.apply <sls> --state_output=changes
 ```
 
 Test mode
 
 ```sh
-venv-salt-call state.apply [sls] test=true --state_output=changes
+venv-salt-call state.apply <sls> test=true --state_output=changes
+```
+
+#### Apply highstate
+
+```sh
+venv-salt-call state.highstate --state_output=changes
 ```
 
 ### Master
