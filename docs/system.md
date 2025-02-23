@@ -418,7 +418,7 @@ sshfs fedora@192.168.0.10:/data /mnt/data
 
 ```sh
 # file: /etc/fstab
-fedora@192.168.0.10:/data /mnt/data sshfs
+fedora@192.168.0.10:/data /mnt/data fuse.sshfs
 ```
 
 ### SSL
