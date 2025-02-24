@@ -443,6 +443,18 @@ k get events --field-selector reason=Killing --sort-by='.metadata.creationTimest
 k get event -o custom-columns=NAME:.metadata.name | cut -d "." -f1
 ```
 
+### Persistent Volumes
+
+- Get pods with PVC
+
+```sh
+k get pods -o=json -A | jq -c '.items[] | {name: .metadata.name, namespace: .metadata.namespace, claimName: .spec |  select( has ("volumes") ).volumes[] | select( has ("persistentVolumeClaim") ).persistentVolumeClaim.claimName }'
+```
+
+```sh
+k describe pvc -A | grep -E "Name|StorageClass|Used"
+```
+
 ## Maintenance
 
 ### Cordon the node(marked as unschedulable)
