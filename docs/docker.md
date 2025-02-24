@@ -60,9 +60,9 @@ docker rmi $(docker images -a -q)
 
 ```sh
 docker run -d --name <container_name> \
---memory <value>\
---memory-swap <value>\
---cpu-shares <value>\
+--memory <value> \
+--memory-swap <value> \
+--cpu-shares <value> \
 <image_name>
 ```
 

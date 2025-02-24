@@ -455,6 +455,30 @@ k get pods -o=json -A | jq -c '.items[] | {name: .metadata.name, namespace: .met
 k describe pvc -A | grep -E "Name|StorageClass|Used"
 ```
 
+### Secrets
+
+- Get secrets
+
+```sh
+k get secrets
+```
+
+- Decode secrets
+
+```sh
+k get secret <secret_name> -o json | jq '.data | map_values(@base64d)' | sed 's/\\n/\n/g'
+```
+
+- Decode Private Key
+
+```sh
+k get secret <secret_name> -o jsonpath="{.data['tls\.key']}" | base64 -d
+```
+
+```sh
+k get secret <secret_name> -o json | jq '.data."tls.key"' | base64 -di
+```
+
 ## Maintenance
 
 ### Cordon the node(marked as unschedulable)
