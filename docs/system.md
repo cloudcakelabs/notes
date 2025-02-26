@@ -647,6 +647,12 @@ Redo = Press `CTRL+R`
 :g/^$/d
 ```
 
+#### Show EOL characters
+
+```sh
+:set list
+```
+
 ### systemd
 
 List all running systemd services
@@ -1165,6 +1171,13 @@ IFS=:;
 set -f;
 find -L $PATH -maxdepth 1 -type f -perm -100 -print;
 ```
+
+- IFS: Use only tabs to split words
+
+```sh
+IFS=$'\t'
+```
+
 
 ## RedHat-based Linux
 
