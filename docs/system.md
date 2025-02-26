@@ -349,6 +349,12 @@ ssh-add ~/.ssh/id_ed25519
 ssh -o StrictHostKeyChecking=no username@remotehost
 ```
 
+#### Useful params
+
+```sh
+ssh -o ConnectTimeout=5 -n -T ${REMOTE_HOST}
+```
+
 #### Get SSH version
 
 ```sh
