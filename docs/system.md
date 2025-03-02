@@ -667,6 +667,12 @@ List all enabled systemd services
 systemctl list-unit-files --type=service --state=enabled
 ```
 
+List all failed systemd services
+
+```sh
+systemctl list-units --type=service --state=failed
+```
+
 List all active sockets
 
 ```sh
@@ -1038,16 +1044,18 @@ bind z source-file ~/.tmux.conf
 # Sort by modification time
 alias ll="ls -lthrA --color=auto"
 # Sort by file size
-alias lt='ls --human-readable --size -1 -S --classify'
+alias lt="ls --human-readable --size -1 -S --classify"
 # View only mounted drives
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
 # Count files
-alias count='find . -type f | wc -l'
+alias count="find . -type f | wc -l"
 # Add a copy progress bar
-alias cpv='rsync -ah --info=progress2' 
+alias cpv="rsync -ah --info=progress2"
 # Find a command in your grep history
 # Example: gh <search_something>
-alias gh='history | grep'
+alias gh="history | grep"
+# Get all paths of json doc
+alias jpaths="jq -r '[paths | join(".")]'"
 ```
 
 ### Date and time
