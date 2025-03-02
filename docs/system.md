@@ -685,7 +685,7 @@ List all active sockets
 systemctl list-sockets
 ```
 
-Debug services qith non-zero exit code
+Debug services with non-zero exit code
 
 ```sh
 while IFS= read -r svc_name; do
