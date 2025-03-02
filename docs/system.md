@@ -667,6 +667,12 @@ List all enabled systemd services
 systemctl list-unit-files --type=service --state=enabled
 ```
 
+List all services with `activating` status
+
+```sh
+systemctl list-units --type=service --state=activating
+```
+
 List all failed systemd services
 
 ```sh
@@ -677,6 +683,16 @@ List all active sockets
 
 ```sh
 systemctl list-sockets
+```
+
+Debug services qith non-zero exit code
+
+```sh
+while IFS= read -r svc_name; do
+    echo "---"
+    svc_name=$(echo "${svc_name}" | awk '{print $1}')
+    systemctl status "${svc_name}"
+done < <(systemctl list-units --type=service --state=activating --quiet)
 ```
 
 Show the most recent system errors
