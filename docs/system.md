@@ -355,6 +355,15 @@ ssh -o StrictHostKeyChecking=no username@remotehost
 ssh -o ConnectTimeout=5 -n -T ${REMOTE_HOST}
 ```
 
+#### Execute multi-line SSH command
+
+```sh
+ssh -T <remote_host> <<EOSSH
+    <command1>
+    <command2>
+EOSSH
+```
+
 #### Get SSH version
 
 ```sh
