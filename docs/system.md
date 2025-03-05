@@ -307,16 +307,32 @@ done
 
 ### Managing Users
 
-Add user
+- Add user
 
 ```sh
 useradd -d <home_dir> -s <shell> <username> -G <group1> <group2>
 ```
 
-Change password
+- Change password
 
 ```sh
 passwd <username>
+```
+
+- Change UID and GID
+
+```sh
+usermod -u <id> <username>
+```
+
+```sh
+usermod -g <id> <groupname>
+```
+
+- Change user primary group
+
+```sh
+usermod -g <primary_groupname> <username>
 ```
 
 ### SSH
