@@ -415,6 +415,24 @@ Host <name2>
     ProxyCommand ssh -W %h:%p <name1>
 ```
 
+#### Regenerate SSH host keys
+
+On RHEL, if the key files are missing, ssh_host keys are generated during the boot.
+
+```sh
+rm -f /etc/ssh/ssh_host_*
+```
+
+```sh
+ssh-keygen -f /etc/ssh/ssh_host_rsa_key     -N '' -q -t rsa
+ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key   -N '' -q -t ecdsa
+ssh-keygen -f /etc/ssh/ssh_host_ed25519_key -N '' -q -t ed25519
+```
+
+```sh
+systemctl restart sshd
+```
+
 #### Logs
 
 ```sh
