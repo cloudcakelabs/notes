@@ -417,7 +417,7 @@ Host <name2>
 
 #### Regenerate SSH host keys
 
-On RHEL, if the key files are missing, ssh_host keys are generated during the boot.
+On RHEL, if missing, ssh_host keys are generated during the boot
 
 ```sh
 rm -f /etc/ssh/ssh_host_*
