@@ -117,7 +117,7 @@ chattr +i <file>
 - Search
   
 ```sh
-find ./ -type f -name '*.txt' -exec grep --color=always -nH 'old' {} \;
+find ./ -type f -name '*.txt' -exec grep --color -nH 'old' {} \;
 ```
 
 - Replace
