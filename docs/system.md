@@ -144,6 +144,18 @@ find ./ -type f -name '*.txt' -exec sed -i.bak 's/old/new/gI' {} \;
 for file in *old*; do mv "${file}" "${file/old/new}"; done
 ```
 
+#### Archiving and compressing
+
+- Extract Tar file
+
+```sh
+tar -xvf archive.tar.gz
+```
+
+```sh
+tar -xvf archive.tar.gz -C <dst>
+```
+
 ### Memory, CPU and process management
 
 #### Sort processes by memory usage
