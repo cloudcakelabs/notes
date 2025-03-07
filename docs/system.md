@@ -112,6 +112,16 @@ lsattr <file>
 chattr +i <file>
 ```
 
+#### Search and replace a string in multiple files
+
+```sh
+find ./ -type f -name '*.txt' -exec grep 'old' {} \;
+```
+
+```sh
+find ./ -type f -name '*.txt' -exec sed -i 's/old/new/gI' {} \;
+```
+
 ### Memory, CPU and process management
 
 #### Sort processes by memory usage
