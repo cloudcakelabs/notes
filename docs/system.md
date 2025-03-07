@@ -115,7 +115,7 @@ chattr +i <file>
 #### Search and replace a string in multiple files
 
 ```sh
-find ./ -type f -name '*.txt' -exec grep 'old' {} \;
+find ./ -type f -name '*.txt' -exec grep --color=always -nH 'old' {} \;
 ```
 
 ```sh
