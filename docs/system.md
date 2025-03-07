@@ -126,6 +126,12 @@ find ./ -type f -name '*.txt' -exec grep --color -nH 'old' {} \;
 find ./ -type f -name '*.txt' -exec sed -i 's/old/new/gI' {} \;
 ```
 
+- Backup files before replacing
+
+```sh
+find ./ -type f -name '*.txt' -exec sed -i.bak 's/old/new/gI' {} \;
+```
+
 ### Memory, CPU and process management
 
 #### Sort processes by memory usage
