@@ -83,7 +83,7 @@ command &> /dev/null
 #### Copy directory content including hidden files
 
 ```sh
-cp -a /src/. /dst/
+cp -av /src/. /dst/
 ```
 
 #### Get some informations about a program
