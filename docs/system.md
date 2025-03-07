@@ -132,6 +132,12 @@ find ./ -type f -name '*.txt' -exec sed -i 's/old/new/gI' {} \;
 find ./ -type f -name '*.txt' -exec sed -i.bak 's/old/new/gI' {} \;
 ```
 
+#### Rename multiple files
+
+```sh
+for f in *old*; do mv "$f" "${f/old/new}";done
+```
+
 ### Memory, CPU and process management
 
 #### Sort processes by memory usage
