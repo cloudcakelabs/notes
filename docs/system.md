@@ -80,6 +80,12 @@ command > /dev/null 2>&1
 command &> /dev/null
 ```
 
+#### Copy directory content including hidden files
+
+```sh
+cp -a /src/. /dst/
+```
+
 #### Get some informations about a program
 
 ```sh
