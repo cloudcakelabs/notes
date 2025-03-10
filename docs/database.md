@@ -17,23 +17,23 @@ sp_helpdb N'<db_name>'
 - Get all tables
 
 ```sh
-exec sp_tables '%'
+sp_tables '%'
 ```
 
 - Filter by database
 
 ```sh
-exec sp_tables '%', '%', 'master', "'TABLE'"
+sp_tables '%', '%', 'master', "'TABLE'"
 ```
 
 - Get all Sybase procedures
 
 ```sh
-exec sp_stored_procedures '%'
+sp_stored_procedures '%'
 ```
 
 - Filter by owner and db
 
 ```sh
-exec sp_stored_procedures '%', 'dbo', 'master'
+sp_stored_procedures '%', 'dbo', 'master'
 ```
