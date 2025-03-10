@@ -49,6 +49,12 @@ find <path> -type f -exec cp {} {}.bak \;
 find <path>/ -type f -name <name> -exec rsync -av --relative {} <path>/ \;
 ```
 
+#### Follow symlinks with find command
+
+```sh
+find -L <path> ...
+```
+
 #### Sort by size
 
 ```sh
@@ -84,6 +90,16 @@ command &> /dev/null
 
 ```sh
 cp -av /src/. /dst/
+```
+
+#### Copy Reference file
+
+```sh
+cp -L <src> <dst>
+```
+
+```sh
+rsync -L <src> <dst>
 ```
 
 #### Get some informations about a program
