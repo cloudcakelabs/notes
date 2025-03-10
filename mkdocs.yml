@@ -12,6 +12,7 @@ nav:
       - K8s: k8s.md
       - Docker: docker.md
     - Automation: automation.md
+    - Database: database.md
 
 theme:
   name: material
