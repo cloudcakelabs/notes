@@ -102,6 +102,20 @@ cp -L <src> <dst>
 rsync -L <src> <dst>
 ```
 
+#### `rsync` multiple source directories
+
+- Remote sync
+
+```sh
+rsync <args> <remote_host>:<dir1> :<dir2> <dest>/
+```
+
+- Local sync
+
+```sh
+rsync <args> <dir1> <dir2> <dest>/
+```
+
 #### Get some informations about a program
 
 ```sh
