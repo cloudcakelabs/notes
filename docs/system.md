@@ -1587,6 +1587,14 @@ Get-NetAdapter
 Get-NetRoute
 ```
 
+### Admin
+
+- Local administrator account.
+
+```powershell
+.\Administrator 
+```
+
 ## Shortcuts
 
 |          |         |
