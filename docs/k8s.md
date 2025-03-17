@@ -599,6 +599,16 @@ socket: `/run/k3s/containerd/containerd.sock`
 docker run -d --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/rancher:v2.9.2
 ```
 
+#### Delete unused images
+
+```sh
+k3s crictl images
+```
+
+```sh
+k3s crictl rmi --prune
+```
+
 #### K3S configuration
 
 - [Requirements](https://docs.k3s.io/installation/requirements)
