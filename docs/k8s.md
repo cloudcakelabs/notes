@@ -581,6 +581,8 @@ With k3s
 k3s crictl rmi --prune
 ```
 
+#### [Debugging Kubernetes nodes with crictl](https://kubernetes.io/docs/tasks/debug/debug-cluster/crictl/)
+
 ### kubectl
 
 ```sh
