@@ -557,6 +557,30 @@ export CRI_CONFIG_FILE=/var/lib/rancher/rke2/agent/etc/crictl.yaml
 /var/lib/rancher/rke2/bin/crictl ps
 ```
 
+#### List images
+
+```sh
+crictl images
+```
+
+With k3s
+
+```sh
+k3s crictl images
+```
+
+#### Remove all unused images
+
+```sh
+crictl rmi --prune
+```
+
+With k3s
+
+```sh
+k3s crictl rmi --prune
+```
+
 ### kubectl
 
 ```sh
@@ -597,16 +621,6 @@ socket: `/run/k3s/containerd/containerd.sock`
 
 ```sh
 docker run -d --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/rancher:v2.9.2
-```
-
-#### Delete unused images
-
-```sh
-k3s crictl images
-```
-
-```sh
-k3s crictl rmi --prune
 ```
 
 #### K3S configuration
