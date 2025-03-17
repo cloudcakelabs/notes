@@ -862,6 +862,18 @@ Update `grub.cfg` file
 grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
 
+### [Cron](https://en.wikipedia.org/wiki/Cron)
+
+```sh
+# * * * * * <command to execute>
+# | | | | |
+# | | | | day of the week (0–6) (Sunday to Saturday; 
+# | | | month (1–12)             7 is also Sunday on some systems)
+# | | day of the month (1–31)
+# | hour (0–23)
+# minute (0–59)
+```
+
 ### VirtualBox
 
 Error: Please disable the KVM kernel extension, recompile your kernel and reboot (VERR_SVM_IN_USE).
