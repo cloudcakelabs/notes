@@ -539,6 +539,12 @@ helm search repo -l <chart_name>
 helm dependency list
 ```
 
+- Uninstall chart
+
+```sh
+helm uninstall <release_name> -n <namespace>
+```
+
 - Locally render templates
 
 ```sh
