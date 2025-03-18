@@ -1587,6 +1587,16 @@ Get-NetAdapter
 Get-NetRoute
 ```
 
+- Find large files
+
+```powershell
+Get-ChildItem c:\ -r -Force -ErrorAction SilentlyContinue |sort -descending -property length | select -first 10 FullName, Length
+```
+
+```powershell
+Get-ChildItem c:\ -r -Force -ErrorAction SilentlyContinue |sort -descending -property length | select -first 10 name, DirectoryName, @{Name="GB";Expression={[Math]::round($_.length / 1GB, 2)}}
+```
+
 ### Admin
 
 - Local administrator account.
