@@ -582,6 +582,12 @@ openssl rsa -in <private.key> -out <decrypted.key>
  openssl pkcs12 -in <file.pfx> -cacerts -nokeys -chain -out <ca.pem>
 ```
 
+#### View a CSR file
+
+```sh
+openssl req -in <csr_name>.csr -noout -text
+```
+
 #### Get a website certificate
 
 ```sh
@@ -1309,6 +1315,12 @@ dnf install lorax
 
 ```sh
 mkksiso -a <file or directory> <kickstart>.ks <installer>.iso <updated_installer>.iso
+```
+
+- Check if a TCP port is open or closed
+
+```sh
+timeout 3 bash -c ">/dev/tcp/<ip_addr or fqdn>/<port_number>" && echo Open || echo Closed
 ```
 
 ### Shell scripting
