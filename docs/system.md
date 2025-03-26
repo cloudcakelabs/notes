@@ -552,7 +552,7 @@ fedora@192.168.0.10:/data /mnt/data fuse.sshfs
 openssl x509 -in <certificate>.crt -text -noout
 ```
 
-- Check a certificate encoded in PKCS#7
+- Check a certificate encoded in PKCS #7
 
 ```sh
 openssl pkcs7 -print_certs -in <certificate>.p7b
