@@ -1323,6 +1323,24 @@ mkksiso -a <file or directory> <kickstart>.ks <installer>.iso <updated_installer
 timeout 3 bash -c ">/dev/tcp/<ip_addr or fqdn>/<port_number>" && echo Open || echo Closed
 ```
 
+- Repeating a character N times
+
+```sh
+printf '*%.0s' {1..150}
+```
+
+With new line
+
+```sh
+printf '*%.0s' {1..150};printf '\n'
+```
+
+- Decoding JSON Web Token(JWT)
+
+```sh
+jq -R 'split(".") | .[0],.[1] | @base64d | fromjson' <<< "<jwt>"
+```
+
 ### Shell scripting
 
 - Read a file line by line
