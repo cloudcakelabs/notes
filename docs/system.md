@@ -102,6 +102,12 @@ cp -L <src> <dst>
 rsync -L <src> <dst>
 ```
 
+With options: -p(preserve permissions), -r(recursive)
+
+```sh
+rsync -Lrp <src> <dst>
+```
+
 #### `rsync` multiple source directories
 
 - Remote sync
