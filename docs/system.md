@@ -1379,6 +1379,12 @@ IFS=$'\t'
 ssh <username>@<remote_host> 'bash -s' < local-script.sh
 ```
 
+- Interactive SSH terminal in script
+
+```sh
+ssh -t <remote_host> < /dev/tty
+```
+
 ## RedHat-based Linux
 
 ### Admin
